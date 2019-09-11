@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">FertvLive</string>
+    <string name="cambiar_text">Cambiar</string>
+    <string name="url_text">URL</string>
+    <string name="change_url_text">Cambiar la URL</string>
+    <string name="error_loading">Error cargando la fuente</string>
+    <string name="retry_text">Reintentar</string>
+    <string name="close_text">Cerrar</string>
+</resources>
