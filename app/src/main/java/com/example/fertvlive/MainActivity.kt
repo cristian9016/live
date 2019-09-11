@@ -8,6 +8,7 @@ import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.example.fertvlive.databinding.TemplateChangeUrlBinding
+import com.example.fertvlive.prefs.Prefs
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.alert
 import org.jetbrains.anko.cancelButton
@@ -15,9 +16,7 @@ import org.jetbrains.anko.yesButton
 
 class MainActivity : AppCompatActivity() {
 
-    var URI_PATH =
-        "https://go5lm4kolawb-hls-live.5centscdn.com/fertv/ab6c040066603ef2519d512b21dce9ab.sdp/index.m3u8"
-
+    var URI_PATH = Prefs.url
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,6 +44,7 @@ class MainActivity : AppCompatActivity() {
 
         mainVideo.setOnPreparedListener {
             pbLoading.visibility = View.GONE
+            Prefs.url = URI_PATH
         }
 
         changeUrl.setOnClickListener {
